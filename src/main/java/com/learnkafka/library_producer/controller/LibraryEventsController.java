@@ -24,9 +24,9 @@ public class LibraryEventsController {
     public ResponseEntity<LibraryEventDTO> postLibraryEvent(@RequestBody LibraryEventDTO libraryEventDTO) {
 
         log.info("libraryEvent: {}", libraryEventDTO);
-        // invoke kafka producer
 
-        liveEventsProducer.sendLibraryEvent(libraryEventDTO);
+        // invoke kafka producer
+        liveEventsProducer.sendLibraryEvent_asynchApproach1(libraryEventDTO);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(libraryEventDTO);
     }

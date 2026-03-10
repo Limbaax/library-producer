@@ -5,7 +5,7 @@ Content-Type: application/json
 {
   "libraryEventId": null,
   "libraryEventType": "NEW",
-  "book": {
+  "bookDTO": {
     "bookId": 456,
     "bookName": "Kafka Using Spring Boot",
     "bookAuthor": "Dilip"
@@ -23,7 +23,7 @@ Content-Type: application/json
 {
   "libraryEventId": 1,
   "libraryEventType": "UPDATE",
-  "book": {
+  "bookDTO": {
     "bookId": 456,
     "bookName": "Kafka Using Spring Boot 2.X",
     "bookAuthor": "Dilip"
@@ -37,7 +37,7 @@ Content-Type: application/json
 {
   "libraryEventId": 2,
   "libraryEventType": "UPDATE",
-  "book": {
+  "bookDTO": {
     "bookId": 456,
     "bookName": "Kafka Using Spring Boot 2.X",
     "bookAuthor": "Dilip"
@@ -55,7 +55,7 @@ Content-Type: application/json
 {
   "libraryEventId": 123,
   "libraryEventType": "UPDATE",
-  "book": {
+  "bookDTO": {
     "bookId": 456,
     "bookName": "Kafka Using Spring Boot",
     "bookAuthor": "Dilip"
@@ -69,7 +69,7 @@ Content-Type: application/json
 {
   "libraryEventId": 999,
   "libraryEventType": "UPDATE",
-  "book": {
+  "bookDTO": {
     "bookId": 456,
     "bookName": "Kafka Using Spring Boot",
     "bookAuthor": "Dilip"
@@ -83,7 +83,7 @@ Content-Type: application/json
 {
   "libraryEventId": 2,
   "libraryEventType": "UPDATE",
-  "book": {
+  "bookDTO": {
     "bookId": 456,
     "bookName": "Kafka Using Spring Boot",
     "bookAuthor": "Dilip"
@@ -99,7 +99,7 @@ Content-Type: application/json
 {
   "libraryEventId": null,
   "libraryEventType": "UPDATE",
-  "book": {
+  "bookDTO": {
     "bookId": 456,
     "bookName": "Kafka Using Spring Boot",
     "bookAuthor": "Dilip"

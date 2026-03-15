@@ -55,4 +55,21 @@ class LibraryEventsControllerUnitTest {
 
 
     }
+
+
+    @Test
+    void postLibraryEvent_invalidValues() {
+        //given
+        when(liveEventsProducer.sendLibraryEvent_asynchApproach1(any(LibraryEventDTO.class))).thenReturn(null);
+
+        // when
+
+        restTestClient.post()
+                .uri("/v1/libraryevent")
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(TestUtil.bookRecordWithInvalidValues())
+                .exchange()
+                .expectStatus().isBadRequest();
+
+    }
 }

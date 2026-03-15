@@ -2,6 +2,7 @@ package com.learnkafka.controller;
 
 import com.learnkafka.domain.LibraryEventDTO;
 import com.learnkafka.producer.LiveEventsProducer;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +22,7 @@ public class LibraryEventsController {
 
 
     @PostMapping("/v1/libraryevent")
-    public ResponseEntity<LibraryEventDTO> postLibraryEvent(@RequestBody LibraryEventDTO libraryEventDTO) {
+    public ResponseEntity<LibraryEventDTO> postLibraryEvent(@RequestBody @Valid LibraryEventDTO libraryEventDTO) {
 
         log.info("libraryEvent: {}", libraryEventDTO);
 

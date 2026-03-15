@@ -16,6 +16,8 @@ import org.springframework.web.context.WebApplicationContext;
 import java.util.HashSet;
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.Mockito.when;
@@ -63,13 +65,20 @@ class LibraryEventsControllerUnitTest {
         when(liveEventsProducer.sendLibraryEvent_asynchApproach1(any(LibraryEventDTO.class))).thenReturn(null);
 
         // when
-
+        final String expectedErrorMessage = "bookDTO.bookId - Book ID cannot be null, bookDTO.bookName - Book name cannot be blank ";
         restTestClient.post()
                 .uri("/v1/libraryevent")
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(TestUtil.bookRecordWithInvalidValues())
+                .body(TestUtil.libraryEventRecordWithInvalidBook())
                 .exchange()
-                .expectStatus().isBadRequest();
+                .expectStatus().isBadRequest()
+                .expectBody(String.class)
+                .consumeWith(result -> {
+                    String responseBody = result.getResponseBody();
+                    assert responseBody != null;
+                    assertTrue(responseBody.contains("bookDTO.bookId - Book ID cannot be null"));
+                    assertTrue(responseBody.contains("bookDTO.bookName - Book name cannot be blank"));
+                });
 
     }
 }

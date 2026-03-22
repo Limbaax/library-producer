@@ -31,8 +31,6 @@ class LibraryEventsControllerIntegrationTest {
         this.restTestClient = RestTestClient.bindToApplicationContext(context).build();
     }
 
-    //TODO: test with a kafkaConsumer
-
     @Test
     void postLibraryEvent() {
         // given

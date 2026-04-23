@@ -22,8 +22,8 @@ public class LibraryEventsController {
 
     @PostMapping("/v1/libraryevent")
     public ResponseEntity<LibraryEvent> postLibraryEvent(@RequestBody @Valid LibraryEvent libraryEvent) {
-        liveEventsProducer.sendLibraryEvent_asynchApproach2(libraryEvent);
 
+        liveEventsProducer.sendLibraryEvent_asynchApproach2(libraryEvent);
         return ResponseEntity.status(HttpStatus.CREATED).body(libraryEvent);
     }
 

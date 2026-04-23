@@ -70,9 +70,10 @@ public class LiveEventsProducer {
     }
 
     private ProducerRecord<Integer, String > buildProducerRecord(Integer key, String value) {
-        return new ProducerRecord<>(topic,key,value);
+        return new ProducerRecord<>(topic, key, value);
     }
-    // testing messages
+
+// testing messages
 //    private ProducerRecord<Integer, String > buildProducerRecord_withHeaders(Integer key, String value) {
 //        List<RecordHeader> recordHeaders = List.of(new RecordHeader("event-source","scanner".getBytes()));
 //        return new ProducerRecord<>(topic,null,key,value,recordHeaders);
